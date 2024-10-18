@@ -9,10 +9,8 @@ export const Landing = () => {
 
     // Handle Search and Update Flag List
     const handleSearch = (event)=>{
-
         const title= event.target.value;
         filterSearch(title)
-
     }
 
     const filterSearch = (searchValue)=>{
@@ -20,6 +18,7 @@ export const Landing = () => {
         searchValue = searchValue.toLowerCase();
         console.log(data)
         const updatedSet = data.filter(item=>{
+
             const lowerCase = item.name.common.toLowerCase()
             return lowerCase.includes(searchValue)
 
@@ -59,8 +58,7 @@ export const Landing = () => {
     <div className={styles.container}>
         <input type='text' className={styles.input}onChange={handleSearch} name='search' placeholder='search'></input> 
         <div className={styles.gridContainer}>
-            {data.length>0 && filteredSet.map(item=>(<Card className="countryCard" data={item}/>))}
-
+            {data.length>0 && filteredSet.map(item=>(<div className="countryCard"><Card className="countryCard" data={item}/></div>))}
         </div>
 
     </div>
