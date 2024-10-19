@@ -16,7 +16,6 @@ export const Landing = () => {
     const filterSearch = (searchValue)=>{
 
         searchValue = searchValue.toLowerCase();
-        console.log(data)
         const updatedSet = data.filter(item=>{
 
             const lowerCase = item.name.common.toLowerCase()
@@ -45,7 +44,7 @@ export const Landing = () => {
 
             }
             catch(error){
-                error.log(error.message)
+                console.error(error.message)
 
             }
         }
